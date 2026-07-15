@@ -1,0 +1,94 @@
+[
+  {
+    "id": "cpu-01",
+    "category": "CPU",
+    "name": "AMD Ryzen 7 7800X3D",
+    "wattage": 120,
+    "socket": "AM5",
+    "price": 389,
+    "image": "assets/images/cpu-ryzen-7800x3d.png"
+  },
+  {
+    "id": "cpu-02",
+    "category": "CPU",
+    "name": "Intel Core i7-14700K",
+    "wattage": 125,
+    "socket": "LGA1700",
+    "price": 369,
+    "image": "assets/images/cpu-intel-14700k.png"
+  },
+  {
+    "id": "mb-01",
+    "category": "Motherboard",
+    "name": "ASUS ROG Strix B650-A Gaming WiFi",
+    "wattage": 50,
+    "socket": "AM5",
+    "price": 219,
+    "image": "assets/images/mb-rog-b650.png"
+  },
+  {
+    "id": "mb-02",
+    "category": "Motherboard",
+    "name": "MSI PRO Z790-A MAX WiFi",
+    "wattage": 60,
+    "socket": "LGA1700",
+    "price": 239,
+    "image": "assets/images/mb-msi-z790.png"
+  },
+  {
+    "id": "gpu-01",
+    "category": "GPU",
+    "name": "NVIDIA GeForce RTX 4070 Super",
+    "wattage": 220,
+    "socket": "PCIe",
+    "price": 599,
+    "image": "assets/images/gpu-rtx-4070.png"
+  },
+  {
+    "id": "gpu-02",
+    "category": "GPU",
+    "name": "NVIDIA GeForce RTX 4090",
+    "wattage": 450,
+    "socket": "PCIe",
+    "price": 1599,
+    "image": "assets/images/gpu-rtx-4090.png"
+  },
+  {
+    "id": "ram-01",
+    "category": "RAM",
+    "name": "Corsair Vengeance RGB DDR5 32GB",
+    "wattage": 5,
+    "socket": "DDR5",
+    "price": 115,
+    "image": "assets/images/ram-corsair-vengeance.png"
+  },
+  
+  {
+    "id": "ssd-01",
+    "category": "Storage",
+    "name": "Samsung 990 Pro 2TB NVMe M.2",
+    "wattage": 6,
+    "socket": "M.2",
+    "price": 169,
+    "image": "assets/images/ssd-samsung-990.png"
+  },
+
+  {
+    "id": "psu-01",
+    "category": "PSU",
+    "name": "MSI MAG A650BN (650W Bronze)",
+    "wattage": 0,
+    "capacity": 650,
+    "price": 59,
+    "image": "assets/images/psu-msi-650w.png"
+  },
+  {
+    "id": "psu-02",
+    "category": "PSU",
+    "name": "Seasonic Focus GX-1000 (1000W Gold)",
+    "wattage": 0,
+    "capacity": 1000,
+    "price": 160,
+    "image": "assets/images/psu-seasonic-1000w.png"
+  }
+]

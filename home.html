@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive 2D PC Configurator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <header class="app-header">
+            <h1>_CUSTOM RIG BUILDER //</h1>
+            <span id="compatibility-badge" class="badge cleared">System Compatibility: Cleared</span>
+        </header>
+
+        <main class="workspace">
+            
+            <section class="selection-panel">
+                <nav class="category-menu">
+                    <button class="tab-btn active" data-category="CPU">CPU</button>
+                    <button class="tab-btn" data-category="Motherboard">Motherboard</button>
+                    <button class="tab-btn" data-category="GPU">GPU</button>
+                    <button class="tab-btn" data-category="RAM">RAM</button>
+                    <button class="tab-btn" data-category="Storage">Storage</button>
+                    <button class="tab-btn" data-category="PSU">PSU</button>
+                </nav>
+
+                <div id="parts-list" class="parts-grid"></div>
+            </section>
+
+            <section class="assembly-bay">
+                <div class="pc-case">
+                    <img id="slot-motherboard" class="hardware-layer" src="" alt="">
+                    <img id="slot-cpu" class="hardware-layer" src="" alt="">
+                    <img id="slot-gpu" class="hardware-layer" src="" alt="">
+                    <img id="slot-ram" class="hardware-layer" src="" alt="">
+                    <img id="slot-ssd" class="hardware-layer" src="" alt="">
+                    <img id="slot-psu" class="hardware-layer" src="" alt="">
+                </div>
+            </section>
+
+        </main>
+
+        <footer class="stats-bar">
+            <div class="stat-box">
+                <span class="stat-label">Estimated Wattage</span>
+                <div class="gauge-container">
+                    <div id="wattage-gauge" class="gauge-fill" style="width: 0%;"></div>
+                </div>
+                <span id="wattage-text" class="stat-val">0W / 650W</span>
+            </div>
+            <div class="stat-box">
+                <span class="stat-label">Total Price</span>
+                <span id="total-price" class="stat-val">$0.00</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>

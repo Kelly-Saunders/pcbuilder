@@ -1,62 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive 2D PC Configurator</title>
-    <link rel="stylesheet" href="style.css">
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1" />
+	<title>PC Builder — Neon</title>
+	<link rel="stylesheet" href="style.css" />
+	<script>
+		// small interactive shimmering title
+		document.addEventListener('DOMContentLoaded',()=>{
+			const title = document.title;
+			let idx=0;
+			setInterval(()=>{
+				idx=(idx+1)%title.length;
+				document.title = title.slice(idx)+" — PC Builder";
+			},3000);
+		});
+	</script>
 </head>
-<body>
+<body class="homepage-page">
+	<div class="bg-grid"></div>
+	<div class="container">
+		<header>
+			<div class="logo">
+				<div class="mark">PC</div>
+				<div>
+					<h1>Neon PC Builder</h1>
+					<div class="tagline">Design, pick, and animate your perfect rig</div>
+				</div>
+			</div>
+			<nav>
+				<a href="#build">Build</a>
+				<a href="#components">Components</a>
+				<a href="#guide">Guide</a>
+			</nav>
+		</header>
 
-    <div class="app-container">
-        <header class="app-header">
-            <h1>_CUSTOM RIG BUILDER //</h1>
-            <span id="compatibility-badge" class="badge cleared">System Compatibility: Cleared</span>
-        </header>
+		<section class="hero">
+			<div class="card hero-left">
+				<h2>Build a blazing neon rig</h2>
+				<p class="sub">Choose parts, preview RGB, and compare performance with instant feedback and animated previews.</p>
+				<div class="neon-line"></div>
+				<div class="stats">
+					<div class="stat"><strong>FPS Ready</strong><span>Optimized builds</span></div>
+					<div class="stat"><strong>RGB Live</strong><span>Animated previews</span></div>
+					<div class="stat"><strong>Price Fit</strong><span>Budget & premium</span></div>
+				</div>
+				<div class="hero-action">
+					<a class="cta" href="index.html">Start Building</a>
+				</div>
+			</div>
 
-        <main class="workspace">
-            
-            <section class="selection-panel">
-                <nav class="category-menu">
-                    <button class="tab-btn active" data-category="CPU">CPU</button>
-                    <button class="tab-btn" data-category="Motherboard">Motherboard</button>
-                    <button class="tab-btn" data-category="GPU">GPU</button>
-                    <button class="tab-btn" data-category="RAM">RAM</button>
-                    <button class="tab-btn" data-category="Storage">Storage</button>
-                    <button class="tab-btn" data-category="PSU">PSU</button>
-                </nav>
+			<aside class="card pc-mock" aria-hidden>
+				<div class="pc-case">
+					<div class="rgb-strip"></div>
+					<!-- decorative components -->
+				</div>
+			</aside>
+		</section>
 
-                <div id="parts-list" class="parts-grid"></div>
-            </section>
+		<section id="components" class="components">
+			<div class="component card">
+				<h3>CPU</h3>
+				<p>High single-core performance for games. Toggle RGB cooler preview.</p>
+			</div>
+			<div class="component card">
+				<h3>GPU</h3>
+				<p>Choose from latest GPUs with bench previews and power budgets.</p>
+			</div>
+			<div class="component card">
+				<h3>Motherboard</h3>
+				<p>Form factor & I/O options with integrated lighting controls.</p>
+			</div>
+			<div class="component card">
+				<h3>Storage & RAM</h3>
+				<p>Fast NVMe options and RGB memory kits with animated pulses.</p>
+			</div>
+		</section>
 
-            <section class="assembly-bay">
-                <div class="pc-case">
-                    <img id="slot-motherboard" class="hardware-layer" src="" alt="">
-                    <img id="slot-cpu" class="hardware-layer" src="" alt="">
-                    <img id="slot-gpu" class="hardware-layer" src="" alt="">
-                    <img id="slot-ram" class="hardware-layer" src="" alt="">
-                    <img id="slot-ssd" class="hardware-layer" src="" alt="">
-                    <img id="slot-psu" class="hardware-layer" src="" alt="">
-                </div>
-            </section>
-
-        </main>
-
-        <footer class="stats-bar">
-            <div class="stat-box">
-                <span class="stat-label">Estimated Wattage</span>
-                <div class="gauge-container">
-                    <div id="wattage-gauge" class="gauge-fill" style="width: 0%;"></div>
-                </div>
-                <span id="wattage-text" class="stat-val">0W / 650W</span>
-            </div>
-            <div class="stat-box">
-                <span class="stat-label">Total Price</span>
-                <span id="total-price" class="stat-val">$0.00</span>
-            </div>
-        </footer>
-    </div>
-
-    <script src="main.js"></script>
+		<footer>
+			<small>Made with neon vibes — preview animations powered by CSS</small>
+		</footer>
+	</div>
 </body>
 </html>

@@ -101,85 +101,48 @@ body {
     overflow: hidden;
 }
 
-/* The magic layer engine container */
+/* ==========================================================================
+   METHOD 1: UNIFIED CANVAS ASSEMBLY ENGINE
+   ========================================================================== */
+
+/* The parent case box is now a responsive 1:1 square */
 .pc-case {
     position: relative;
-    width: 80%;
-    height: 80%;
+    width: 90%;
+    max-width: 500px; /* Constrains it visually so it doesn't clip */
+    aspect-ratio: 1 / 1;
     background: url('assets/images/pc-case-blueprint.png') no-repeat center center;
     background-size: contain;
     border: 1px dashed rgba(0, 243, 255, 0.15);
 }
 
-/* Global Hardware Layer Setup */
+/* Every single layer maps perfectly to the parent container bounds */
 .hardware-layer {
     position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Guarantees layers scale proportionally together */
     opacity: 0;
-    object-fit: contain;
     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-    transform: scale(0.95);
+    transform: scale(0.98); /* Smooth, premium physical snap-in effect */
 }
 
-/* Active State with background-stripping white multiplier hack */
+/* Active State (True transparent PNGs on top of each other) */
 .hardware-layer.active {
     opacity: 1;
     transform: scale(1);
-    mix-blend-mode: multiply;
 }
 
-/* ==========================================================================
-   CONSOLIDATED ACCURATE LAYER COORDINATES
-   ========================================================================== */
+/* Stacking order (Low numbers in the back, high numbers on top) */
+#slot-motherboard { z-index: 1; }
+#slot-psu         { z-index: 2; }
+#slot-cpu         { z-index: 3; }
+#slot-ssd         { z-index: 4; }
+#slot-ram         { z-index: 5; }
+#slot-gpu         { z-index: 6; } /* Sits physically in front of everything */
 
-/* The Motherboard (Anchored inside the chassis) */
-/* The Motherboard (Nicely centered in the chassis) */
-#slot-motherboard { 
-    top: 17%; 
-    left: 21%; 
-    width: 58%; 
-    z-index: 1; 
-}
-
-/* The CPU (Centered on the socket square) */
-#slot-cpu { 
-    top: 30%; 
-    left: 47.5%; 
-    width: 8%; 
-    z-index: 2; 
-}
-
-/* The RAM (Aligned vertically in the DIMM slots to the right of the CPU) */
-#slot-ram { 
-    top: 27%; /* Adjusted to account for the pivot */
-    left: 55%; 
-    width: 10%; /* Keep this small so the vertical stick looks slim */
-    z-index: 2; 
-    transform: rotate(90deg); /* Rotates the horizontal stick to be vertical */
-}
-
-/* The GPU (Sized down so it fits perfectly on the PCIe slot without covering the whole case) */
-#slot-gpu { 
-    top: 45%; 
-    left: 17%; 
-    width: 62%; 
-    z-index: 4; 
-}
-
-/* The M.2 SSD */
-#slot-ssd { 
-    top: 42%; 
-    left: 36%; 
-    width: 12%; 
-    z-index: 3; 
-}
-
-/* The PSU (Locked into the lower basement) */
-#slot-psu { 
-    bottom: 8%; 
-    left: 21%; 
-    width: 25%; 
-    z-index: 2; 
-}
 
 /* ==========================================================================
    STATS BAR, CARDS & UI COMPONENTS
@@ -304,7 +267,9 @@ body {
     border: 1px solid var(--danger);
 }
 
-/* Homepage styles */
+/* ==========================================================================
+   NEON HOMEPAGE LAYOUTS (STRICTLY INTACT)
+   ========================================================================== */
 .homepage-page {
     min-height: 100%;
     margin: 0;
